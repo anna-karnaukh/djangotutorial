@@ -1,0 +1,23 @@
+<h1>Все герои</h1>
+<table border = '1'>
+    <tr>
+        {% for i in header %}
+            <th>{{ i }}</th>
+        {% endfor %}
+    </tr>
+    {% for heroes in herodata %}
+        <tr>
+            <td>{{ heroes.0 }}</td>
+            <td>{{ heroes.1 }}</td>
+            <td>{{ heroes.2 }}</td>
+            <td>{{ heroes.3 }}</td>
+            <td>{{ heroes.4 }}</td>
+            <td>
+                {% if heroes.5 %}
+                    <a href="{% url 'nine:hero' heroes.5 %}">{{ heroes.5 }}</a>
+                {% endif %}
+            </td>
+            <td>{{ heroes.6 }}</td>
+        </tr>
+    {% endfor %}
+</table>
